@@ -5,16 +5,16 @@ function Test-Process {
 .DESCRIPTION
     Function to test whether a Windows process matching name(s) provided is in a desired state (Running|NotRunning)
 .EXAMPLE
-    PS C:\> Test-Process -ProcessName 'nodepad'
+    PS C:\> Test-Process -ProcessName 'notepad'
     
     Checks for a process named 'notepad' - if process is running, return $false; if process is not running, return $true.
     Note: the name comparison is a Regex match, so this would search for any name containing 'notepad' (such as 'notepad' and 'notepad++')
 .EXAMPLE
-    PS C:\> Test-Process -ProcessName 'nodepad|wordpad' -ExactMatches
+    PS C:\> Test-Process -ProcessName 'notepad|wordpad' -ExactMatches
     
     Check for a process named either 'notepad' or 'wordpad'- if process matching either is found, return $false; if process is not found, return $true
 .EXAMPLE
-    PS C:\> Test-Process -ProcessName 'nodepad|wordpad' -DesiredState Running -ExactMatches -ReturnType Objects
+    PS C:\> Test-Process -ProcessName 'notepad|wordpad' -DesiredState Running -ExactMatches -ReturnType Objects
     
     Check for a process named either 'notepad' or 'wordpad'- if process matching either is found, return $false; if process is not found, return $true
 
